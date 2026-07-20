@@ -2,7 +2,7 @@
 
 ## Public edition
 
-This is the first sanitized public release of the Kalshi 10×1¢ educational bot.
+This is the first public edition of the Kalshi 10×1¢ educational order planner.
 
 ### Core profile
 
@@ -32,7 +32,7 @@ This is the first sanitized public release of the Kalshi 10×1¢ educational bot
 
 ### Quality evidence
 
-- 100 unit and security regression tests.
+- 114 unit and security regression tests.
 - Ruff static analysis.
 - Python compilation checks.
 - Secret and private-key scanning.
@@ -46,7 +46,7 @@ The prerelease `requests==2.32.5` pin was replaced after a 2026 vulnerability re
 
 ### Documentation
 
-Includes security-first setup, live activation, emergency response, architecture, audit, FAQ, portfolio copy, warm release story, profit/risk language, licensing action, release checklist, third-party notices, and showcase guidance.
+Includes security-first setup, live activation, emergency response, architecture, audit evidence, risk guidance, third-party notices, and concise support documentation.
 
 ### Known limitations
 

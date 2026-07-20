@@ -1,7 +1,7 @@
 Kalshi 10x1c Public Edition v1.0.0 — Packaged File Inventory
 Copyright (c) 2026 Gateway Information Group LLC. Licensed under the MIT License.
 
-Expected packaged files: 68
+Expected packaged files: 62
 Generated verification artifacts, .env, private keys, caches, logs, and runtime state are not packaged.
 
 .env.example
@@ -19,26 +19,20 @@ DISCLAIMER.md
 FAQ.md
 FILE_INVENTORY.txt
 LICENSE.md
-LICENSE_OWNER_ACTION.md
 LIVE_TRADING.md
 MANIFEST.sha256
 NOTICE.md
-PORTFOLIO_COPY.md
 PRIVACY_AND_LOCAL_DATA.md
 PROFIT_AND_RISK.md
 QUICKSTART.md
 README.md
-RELEASE_CHECKLIST.md
 RELEASE_NOTES.md
-RELEASE_STORY.md
 SECURITY.md
 SECURITY_AUDIT.md
-SHOWCASE_GUIDE.md
 SUPPORT.md
 THIRD_PARTY_NOTICES.md
 TRADING_DISABLED
 VERIFY_RELEASE.md
-WHY_I_RELEASED_THIS.md
 kalshi_public/__init__.py
 kalshi_public/api.py
 kalshi_public/auth.py

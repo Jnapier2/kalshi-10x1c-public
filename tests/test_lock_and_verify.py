@@ -205,6 +205,18 @@ class ManifestTests(unittest.TestCase):
                 path.write_text(line, encoding="utf-8")
                 self.assertEqual(_check_secrets(root).status, "FAIL")
 
+    def test_local_virtual_environment_is_outside_secret_scan_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            dependency = root / ".venv" / "Lib" / "site-packages" / "example.py"
+            dependency.parent.mkdir(parents=True)
+            dependency.write_text("API_TOKEN=third-party-test-value\n", encoding="utf-8")
+            self.assertEqual(_check_secrets(root).status, "PASS")
+            hidden = root / "project" / "venv" / "credentials.py"
+            hidden.parent.mkdir(parents=True)
+            hidden.write_text("API_TOKEN=real-looking-private-value\n", encoding="utf-8")
+            self.assertEqual(_check_secrets(root).status, "FAIL")
+
     def test_verifier_requires_tracked_kill_switch(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

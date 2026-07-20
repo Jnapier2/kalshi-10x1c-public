@@ -29,7 +29,7 @@ python -m unittest discover -s tests -v
 ruff check run_bot.py kalshi_public scripts tests
 ```
 
-Result: dependency consistency passed, Ruff passed, and 113 of 113 tests passed.
+Result: dependency consistency passed, Ruff passed, and 114 of 114 tests passed.
 
 As an additional point-in-time check on July 20, 2026, the package records for the exact runtime pins reported no current vulnerabilities through the PyPI JSON API. This is useful corroborating evidence, but it is not a substitute for `pip-audit`; the strict verifier still requires that independent advisory scan to complete before production authorization.
 

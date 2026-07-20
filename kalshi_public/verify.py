@@ -52,6 +52,16 @@ _DYNAMIC_DIRS = {
     "logs",
     "runtime",
 }
+_SECRET_SCAN_IGNORED_DIRS = {
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules",
+    "venv",
+}
 _KEY_EXTENSIONS = {".key", ".pem", ".p12", ".pfx", ".jks", ".keystore"}
 _CLEAN_FORBIDDEN_DIRS = {
     ".cache",
@@ -224,7 +234,11 @@ def _check_manifest(root: Path) -> Check:
     return Check("Release integrity manifest", "PASS", f"{len(entries)} immutable files matched")
 
 
-def _snapshot_tree(root: Path) -> TreeSnapshot:
+def _snapshot_tree(
+    root: Path,
+    *,
+    skip_directories: frozenset[str] = frozenset(),
+) -> TreeSnapshot:
     """Enumerate a tree without following symlinks, junctions, or reparse points."""
     files: list[Path] = []
     directories: list[str] = []
@@ -250,6 +264,8 @@ def _snapshot_tree(root: Path) -> TreeSnapshot:
             if entry.is_symlink() or (reparse_flag and getattr(metadata, "st_file_attributes", 0) & reparse_flag):
                 unsafe.append(f"link or reparse point is not allowed: {relative}")
             elif stat.S_ISDIR(metadata.st_mode):
+                if directory == root and entry.name in skip_directories:
+                    continue
                 directories.append(relative)
                 pending.append(path)
             elif stat.S_ISREG(metadata.st_mode):
@@ -430,8 +446,11 @@ def _check_secrets(
     snapshot: TreeSnapshot | None = None,
     package_mode: bool = False,
 ) -> Check:
-    """Scan every regular tree file, including runtime state and unusual extensions."""
-    tree = snapshot or _snapshot_tree(root)
+    """Scan regular files outside explicitly excluded root-level development directories."""
+    tree = snapshot or _snapshot_tree(
+        root,
+        skip_directories=frozenset(_SECRET_SCAN_IGNORED_DIRS),
+    )
     findings = list(tree.unsafe_entries)
     private_key_header = re.compile(
         br"-----BEGIN (?:ENCRYPTED |RSA |DSA |EC |OPENSSH |PGP )?PRIVATE KEY(?: BLOCK)?-----"
@@ -519,7 +538,8 @@ def _check_secrets(
     return Check(
         "Secret and private-key scan",
         "PASS",
-        "all regular tree files were scanned without finding private keys or credential-like values",
+        "all regular files outside root-level development/cache directories were scanned "
+        "without finding private keys or credential-like values",
     )
 
 
@@ -550,7 +570,7 @@ def _check_python_safety(root: Path) -> Check:
         try:
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         except (SyntaxError, UnicodeDecodeError) as exc:
-            findings.append(f"unparseable {path.relative_to(root)}: {exc}")
+            findings.append(f"could not parse {path.relative_to(root)}: {exc}")
             continue
         for node in ast.walk(tree):
             if not isinstance(node, ast.Call):

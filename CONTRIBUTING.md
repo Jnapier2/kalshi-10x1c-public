@@ -12,7 +12,7 @@ third-party material without appropriate permission.
 
 ## Security reports
 
-Do not open a public issue for a vulnerability, credential exposure, or exploitable live-trading bypass. Use GitHub's private vulnerability-reporting feature through the repository Security tab. Repository owners should enable that feature before publication.
+Do not open a public issue for a vulnerability, credential exposure, or exploitable live-trading bypass. Use GitHub's private vulnerability-reporting feature through the repository Security tab.
 
 ## Safe change requirements
 
