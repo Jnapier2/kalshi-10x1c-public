@@ -1,0 +1,63 @@
+"""Immutable public-edition constants.
+
+These values are intentionally code-level invariants rather than environment
+settings. Changing them creates a different build and invalidates the release
+verification manifest.
+"""
+
+from __future__ import annotations
+
+from decimal import Decimal
+
+VERSION = "1.0.0"
+BUILD_ID = "kalshi-10x1c-public-v1.0.0"
+USER_AGENT = f"Gateway-Kalshi-10x1c/{VERSION}"
+
+ORDER_COUNT = Decimal("10.00")
+ECONOMIC_BUY_PRICE = Decimal("0.0100")
+YES_BID_PRICE = Decimal("0.0100")
+YES_ASK_PRICE_FOR_NO_BUY = Decimal("0.9900")
+SESSION_CONTRACT_CAP = Decimal("80.00")
+MAX_CREATE_ORDERS_PER_PROCESS = 8
+MAX_MARKET_PAGES_PER_SERIES = 5
+MAX_ACCOUNT_PAGES = 5
+MAX_RESPONSE_BYTES = 2_000_000
+
+ALLOWED_SERIES = (
+    "KXBTC15M",
+    "KXETH15M",
+    "KXSOL15M",
+    "KXDOGE15M",
+    "KXXRP15M",
+    "KXBNB15M",
+    "KXHYPE15M",
+    "KXNEAR15M",
+)
+
+PRODUCTION_REST_URL = "https://external-api.kalshi.com/trade-api/v2"
+DEMO_REST_URL = "https://external-api.demo.kalshi.co/trade-api/v2"
+APPROVED_REST_URLS = (PRODUCTION_REST_URL, DEMO_REST_URL)
+
+CREATE_ORDER_PATH = "/portfolio/events/orders"
+
+DEMO_RISK_ACK = "I_ACCEPT_DEMO_ORDER_RISK"
+PRODUCTION_RISK_ACK = "I_ACCEPT_REAL_MONEY_RISK"
+LIVE_LAUNCH_ACK = "I_CONFIRM_THIS_RUN_CAN_PLACE_REAL_MONEY_ORDERS"
+CONTINUOUS_ACK = "I_ACCEPT_CONTINUOUS_LIVE_TRADING"
+KILL_SWITCH_OFF_ACK = "I_UNDERSTAND_REMOVING_KILL_SWITCH"
+SESSION_RESET_ACK = "I_ACCEPT_RESETTING_THE_80_CONTRACT_SESSION_BUDGET"
+UNLOCK_ACK = "I_CONFIRM_NO_OTHER_BOT_INSTANCE_IS_RUNNING"
+PRIVACY_PURGE_ACK = "I_ACCEPT_PURGING_LOGS_AND_RESETTING_SESSION_STATE"
+
+KILL_SWITCH_FILENAME = "TRADING_DISABLED"
+ATTESTATION_FILENAME = ".public_verify_attestation.json"
+MANIFEST_FILENAME = "MANIFEST.sha256"
+LEDGER_RELATIVE_PATH = "runtime/session_ledger.json"
+LOCK_RELATIVE_PATH = "runtime/live_instance.lock"
+ORDER_LOG_RELATIVE_PATH = "logs/orders.jsonl"
+
+DIRECTION_POLICIES = ("cheapest", "yes", "no")
+DEFAULT_DIRECTION_POLICY = "cheapest"
+DEFAULT_SCAN_INTERVAL_SECONDS = 30
+DEFAULT_MIN_SECONDS_TO_CLOSE = 60
+DEFAULT_HTTP_TIMEOUT_SECONDS = 10.0

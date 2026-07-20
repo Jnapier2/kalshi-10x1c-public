@@ -1,0 +1,34 @@
+[project]
+name = "kalshi-10x1c-public"
+version = "1.0.0"
+description = "Security-first educational Kalshi 10-contract-at-1-cent bot"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Gateway Information Group LLC" }]
+license = "MIT"
+keywords = ["kalshi", "prediction-markets", "trading-bot", "security", "verification"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+  "cryptography==49.0.0",
+  "requests==2.34.2",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+exclude = ["runtime", "logs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "S"]
+ignore = [
+  "S101", # assertions are appropriate in tests
+  "S603", # verifier uses fixed argv with shell disabled
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106", "S108"]
+"scripts/generate_manifest.py" = ["E402"]
+"run_bot.py" = ["E402"] # intentionally enables no-bytecode mode before local imports
