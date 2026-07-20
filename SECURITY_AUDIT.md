@@ -2,9 +2,9 @@
 
 ## Executive result
 
-The sanitized public source passed the local release regression suite after the final hardening changes:
+The published source passed the local release regression suite after the latest hardening changes:
 
-- **113 of 113 unit and security tests passed**;
+- **114 of 114 unit and security tests passed**;
 - Ruff static analysis passed;
 - all Python files compiled in memory;
 - exact runtime dependency versions installed successfully;
@@ -133,7 +133,7 @@ Mutable ledger, lock, log, and kill-switch paths are outside the immutable manif
 
 ## Test coverage summary
 
-The 113 tests cover:
+The 114 tests cover:
 
 - environment isolation, parser rejection, bounds and defaults;
 - credential and `.env` permission gates;
@@ -171,6 +171,6 @@ The GitHub Actions workflow performs the same strict verification on pushes, pul
 
 Technically, publish only the final hashed ZIP and its external SHA-256 after clean-extraction verification. Operationally, keep live trading disabled in all examples, demonstrate dry-run first, use demo credentials in any video, redact all account details, enable private vulnerability reporting, and require strict CI.
 
-The MIT decision is documented in [LICENSE_OWNER_ACTION.md](LICENSE_OWNER_ACTION.md), and the complete license is in [LICENSE.md](LICENSE.md).
+The complete MIT license is in [LICENSE.md](LICENSE.md).
 
 Copyright © 2026 Gateway Information Group LLC. Licensed under the MIT License.

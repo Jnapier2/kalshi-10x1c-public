@@ -16,8 +16,8 @@ All notable public-edition changes are documented here.
 - Existing resting-order and non-zero-position preflight.
 - Persistent 80-contract ledger and ambiguity quarantine.
 - Single-writer lock.
-- Source manifest, verifier, strict CI workflow, and 113 regression and security tests.
-- Full public documentation and showcase copy.
+- Source manifest, verifier, strict CI workflow, and 114 regression and security tests.
+- Security, operations, licensing, and support documentation.
 
 ### Security fixes during release preparation
 

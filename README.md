@@ -6,7 +6,10 @@
 
 ## Verify before use
 
-If you downloaded an archive, first follow [VERIFY_RELEASE.md](VERIFY_RELEASE.md) to compare its separately published SHA-256 checksum and extract it into a clean directory. A mismatch means stop.
+If you received a packaged release with a separately published SHA-256 checksum,
+first follow [VERIFY_RELEASE.md](VERIFY_RELEASE.md). GitHub's automatically
+generated source archives are not sealed release packages; cloned source can
+continue with the repository verifier below.
 
 From the verified project directory:
 
@@ -116,8 +119,6 @@ Those numbers describe one conditional payoff, not a forecast. A 1¢ price usual
 - `SECURITY.md` and `SECURITY_AUDIT.md` — threat model, controls, evidence, and limitations.
 - `QUICKSTART.md` — short verification and read-only path.
 - `PRIVACY_AND_LOCAL_DATA.md` — local-data inventory, retention, cleanup, and sharing guidance.
-- `RELEASE_STORY.md` — the responsible intent behind this edition.
-- `SHOWCASE_GUIDE.md` and `PORTFOLIO_COPY.md` — publication materials.
 - `DEPENDENCY_AUDIT.md` and `THIRD_PARTY_NOTICES.md` — dependency evidence and notices.
 
 ## Official API references
@@ -133,9 +134,7 @@ Those numbers describe one conditional payoff, not a forecast. A 1¢ price usual
 
 Copyright © 2026 Gateway Information Group LLC.
 
-This project is released under the [MIT License](LICENSE.md). The deliberate
-owner decision is recorded in [LICENSE_OWNER_ACTION.md](LICENSE_OWNER_ACTION.md),
-and dependency obligations remain documented in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This project is released under the [MIT License](LICENSE.md). Dependency
+obligations remain documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 This project is independent and is not affiliated with, endorsed by, or sponsored by Kalshi. Nothing here is financial, investment, legal, tax, or compliance advice.

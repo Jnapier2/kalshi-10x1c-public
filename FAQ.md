@@ -2,7 +2,7 @@
 
 ## Is this bot safe?
 
-It has multiple fail-closed controls and 100 passing regression tests, but no trading bot is universally safe. Review the source, verify the exact archive, use a dedicated demo key first, keep the kill switch armed, and understand the limitations in `SECURITY.md`.
+It has multiple fail-closed controls and 114 passing regression tests, but no trading bot is universally safe. Review the source, verify the exact archive, use a dedicated demo key first, keep the kill switch armed, and understand the limitations in `SECURITY.md`.
 
 ## Can dry-run submit an order?
 
@@ -72,7 +72,6 @@ No. It is an independent educational project that interacts with Kalshi's docume
 
 Yes. The project is available under the MIT License. Preserve the copyright
 and permission notice, review the risk documentation, and verify the code in
-your own environment before use. See `LICENSE.md` and
-`LICENSE_OWNER_ACTION.md`.
+your own environment before use. See `LICENSE.md`.
 
 Copyright © 2026 Gateway Information Group LLC. Licensed under the MIT License.
