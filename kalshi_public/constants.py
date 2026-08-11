@@ -9,8 +9,8 @@ from __future__ import annotations
 
 from decimal import Decimal
 
-VERSION = "1.0.0"
-BUILD_ID = "kalshi-10x1c-public-v1.0.0"
+VERSION = "1.0.1"
+BUILD_ID = "kalshi-10x1c-public-v1.0.1"
 USER_AGENT = f"Gateway-Kalshi-10x1c/{VERSION}"
 
 ORDER_COUNT = Decimal("10.00")

@@ -1,6 +1,6 @@
 # Notice
 
-**Project:** Kalshi 10×1¢ Public Edition v1.0.0  
+**Project:** Kalshi 10×1¢ Public Edition v1.0.1
 **First-party rights holder:** Gateway Information Group LLC  
 **Copyright:** © 2026 Gateway Information Group LLC  
 **License:** MIT

@@ -9,7 +9,7 @@ The runtime dependency set is exact-pinned in `requirements.txt`. Development ve
 | certifi | 2026.6.17 | CA certificate bundle | MPL-2.0 |
 | cffi | 2.1.0 | cryptography dependency | MIT-0 |
 | charset-normalizer | 3.4.9 | Requests dependency | MIT |
-| cryptography | 49.0.0 | RSA key loading and RSA-PSS signing | Apache-2.0 OR BSD-3-Clause |
+| cryptography | 50.0.0 | RSA key loading and RSA-PSS signing | Apache-2.0 OR BSD-3-Clause |
 | idna | 3.18 | Requests dependency | BSD-3-Clause |
 | pycparser | 3.0 | CFFI dependency | BSD-3-Clause |
 | requests | 2.34.2 | isolated HTTPS client | Apache-2.0 |
@@ -36,6 +36,10 @@ As an additional point-in-time check on July 20, 2026, the package records for t
 ## Requests correction
 
 The prerelease lock used `requests==2.32.5`. During release preparation, that pin was removed after a 2026 vulnerability record was identified. The final lock uses `requests==2.34.2` with refreshed compatible transitive pins and a full regression rerun.
+
+## Cryptography correction
+
+Version 1.0.1 updates `cryptography` from 49.0.0 to 50.0.0, the first patched release for the PKCS#7 EnvelopedData oracle advisory reported against the earlier lock. The exact lock, tests, static analysis, strict advisory scan, and release manifest were refreshed together.
 
 ## Online vulnerability qualification
 

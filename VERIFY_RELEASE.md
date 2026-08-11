@@ -10,21 +10,21 @@ are not sealed packages and do not include a project-issued checksum sidecar.
 
 The publisher should provide these two separate files:
 
-- `kalshi_10x1c_public_v1.0.0.zip`
-- `kalshi_10x1c_public_v1.0.0.zip.sha256`
+- `kalshi_10x1c_public_v1.0.1.zip`
+- `kalshi_10x1c_public_v1.0.1.zip.sha256`
 
 From the directory containing both files:
 
 ```bash
 # macOS / Linux
-sha256sum -c kalshi_10x1c_public_v1.0.0.zip.sha256
+sha256sum -c kalshi_10x1c_public_v1.0.1.zip.sha256
 ```
 
 PowerShell:
 
 ```powershell
-$expected = (Get-Content .\kalshi_10x1c_public_v1.0.0.zip.sha256).Split()[0].ToLower()
-$actual = (Get-FileHash .\kalshi_10x1c_public_v1.0.0.zip -Algorithm SHA256).Hash.ToLower()
+$expected = (Get-Content .\kalshi_10x1c_public_v1.0.1.zip.sha256).Split()[0].ToLower()
+$actual = (Get-FileHash .\kalshi_10x1c_public_v1.0.1.zip -Algorithm SHA256).Hash.ToLower()
 if ($actual -ne $expected) { throw "ZIP checksum mismatch" }
 "ZIP checksum PASS: $actual"
 ```

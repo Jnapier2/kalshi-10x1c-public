@@ -1,4 +1,4 @@
-Kalshi 10x1c Public Edition v1.0.0 — Packaged File Inventory
+Kalshi 10x1c Public Edition v1.0.1 — Packaged File Inventory
 Copyright (c) 2026 Gateway Information Group LLC. Licensed under the MIT License.
 
 Expected packaged files: 63

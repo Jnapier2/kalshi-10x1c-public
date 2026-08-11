@@ -2,6 +2,14 @@
 
 All notable public-edition changes are documented here.
 
+## 1.0.1 — 2026-08-11
+
+### Security
+
+- Updated `cryptography` from 49.0.0 to 50.0.0 to resolve the PKCS#7 EnvelopedData oracle advisory reported against the earlier lock.
+- Refreshed dependency documentation, release identity, and the immutable-file manifest.
+- Preserved all dry-run defaults, activation gates, order limits, and strategy behavior.
+
 ## 1.0.0 — 2026-07-19
 
 ### Added
