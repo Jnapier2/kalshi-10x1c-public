@@ -9,7 +9,7 @@ This project depends on third-party software installed by the user. Those packag
 | certifi | 2026.6.17 | MPL-2.0 | github.com/certifi/python-certifi |
 | cffi | 2.1.0 | MIT-0 | github.com/python-cffi/cffi |
 | charset-normalizer | 3.4.9 | MIT | github.com/jawah/charset_normalizer |
-| cryptography | 49.0.0 | Apache-2.0 OR BSD-3-Clause | github.com/pyca/cryptography |
+| cryptography | 50.0.0 | Apache-2.0 OR BSD-3-Clause | github.com/pyca/cryptography |
 | idna | 3.18 | BSD-3-Clause | github.com/kjd/idna |
 | pycparser | 3.0 | BSD-3-Clause | github.com/eliben/pycparser |
 | requests | 2.34.2 | Apache-2.0 | github.com/psf/requests |

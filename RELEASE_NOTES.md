@@ -1,4 +1,8 @@
-# Release Notes — v1.0.0
+# Release Notes — v1.0.1
+
+## Security maintenance
+
+Version 1.0.1 updates the exact `cryptography` lock to 50.0.0, the first patched release for the advisory affecting the prior 49.0.0 dependency. Application behavior, dry-run defaults, activation gates, immutable order limits, and strategy remain unchanged.
 
 ## Public edition
 

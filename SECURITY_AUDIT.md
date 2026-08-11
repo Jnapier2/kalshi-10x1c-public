@@ -1,4 +1,4 @@
-# Security Audit — Public v1.0.0
+# Security Audit — Public v1.0.1
 
 ## Executive result
 

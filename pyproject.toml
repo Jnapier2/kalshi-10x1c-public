@@ -1,6 +1,6 @@
 [project]
 name = "kalshi-10x1c-public"
-version = "1.0.0"
+version = "1.0.1"
 description = "Security-first educational Kalshi 10-contract-at-1-cent bot"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,7 +12,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
 ]
 dependencies = [
-  "cryptography==49.0.0",
+  "cryptography==50.0.0",
   "requests==2.34.2",
 ]
 
