@@ -1,0 +1,193 @@
+{
+  "schema_version": "gateway-public-manifest-v1.2",
+  "package_id": "KALSHI_10X1C_PUBLIC",
+  "project": "Kalshi 10×1¢ Public Edition",
+  "version": "69.68-public.1",
+  "build_id": "KALBUY-PUBLIC-69.68.1-OFFLINE-TRUTH",
+  "execution_namespace": "KALSHI10X1C_PUBLIC",
+  "canonical_entrypoint": "run_buy_planner.py",
+  "hash_mode": "sha256 of UTF-8 text normalized to LF; raw bytes for other files",
+  "file_count": 30,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "package_managed": true,
+      "canonical_size": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "package_managed": true,
+      "canonical_size": 1592,
+      "sha256": "2e9f72f527787e30844a4494b61757eafb90182d650620af2f4e99cb8d6c16fd"
+    },
+    {
+      "path": ".github/workflows/codeql.yml",
+      "package_managed": true,
+      "canonical_size": 583,
+      "sha256": "48d5a16e255da0c8d37ed4178a0858557da52455c8e699609c289556e3a0b49c"
+    },
+    {
+      "path": ".gitignore",
+      "package_managed": true,
+      "canonical_size": 132,
+      "sha256": "51fe1808f43386dc8ca654ce470304b96f55626249e47f2692b2dac1cee709b4"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "package_managed": true,
+      "canonical_size": 745,
+      "sha256": "8d12a3e875e093b7b8c20fa05e8b0872c0469b30940229c150f6687bdef7919a"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "package_managed": true,
+      "canonical_size": 519,
+      "sha256": "734dc6b41a9f69a16b1809b4d8aa00aa5d7fefd005b3b4dfd1d1e7349026c5f6"
+    },
+    {
+      "path": "Kalshi10x1cPublic.bat",
+      "package_managed": true,
+      "canonical_size": 331,
+      "sha256": "4f2071174ead67f49d3f5aeb0a8deeca1f77a54baf415a341e2d3bdefa2aa8d0"
+    },
+    {
+      "path": "LICENSE",
+      "package_managed": true,
+      "canonical_size": 1086,
+      "sha256": "7b2cc810096ea37951d0a6c92eb8c2921328816a3c68ea23fc84bc76f72327c0"
+    },
+    {
+      "path": "PACKAGE_METADATA.json",
+      "package_managed": true,
+      "canonical_size": 1331,
+      "sha256": "a4eb5ac8d26fb7d71baceb5ac098d325b9b092852305bd466f8aa2faf647f746"
+    },
+    {
+      "path": "PUBLIC_STERILIZATION_REPORT.md",
+      "package_managed": true,
+      "canonical_size": 1567,
+      "sha256": "d4a864c7eda5fe6e265898d092373001a9b950749e52a311c28cee153ca717c5"
+    },
+    {
+      "path": "README.md",
+      "package_managed": true,
+      "canonical_size": 2990,
+      "sha256": "10ec0891fda0df77b1278860c6dcd682b62ccd4dac9c4913473ebf1daa982e1b"
+    },
+    {
+      "path": "SBOM.cdx.json",
+      "package_managed": true,
+      "canonical_size": 634,
+      "sha256": "8b5ef91234eb816e62aa951ac19131951f56c6134d5eb720560209952775f369"
+    },
+    {
+      "path": "SECURITY.md",
+      "package_managed": true,
+      "canonical_size": 959,
+      "sha256": "db9fe6a869cfc009764af5481ec180768d27c0a69479005b3a0654ec80253d03"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "package_managed": true,
+      "canonical_size": 474,
+      "sha256": "4f0c0a64947fd5dd1b02a6e644b939b4893684a472f09b6db2bc683798e75fbc"
+    },
+    {
+      "path": "TRADING_DISABLED",
+      "package_managed": true,
+      "canonical_size": 91,
+      "sha256": "ae84799d42948526eb9f53230784b3b75aa520aa7de77fdad546edd76c9bf70b"
+    },
+    {
+      "path": "VERSION.txt",
+      "package_managed": true,
+      "canonical_size": 15,
+      "sha256": "2910a932cbdf67513ed171b0027c80996fd5f115d5d7d9d99cdbfe2ffe58e807"
+    },
+    {
+      "path": "examples/eligible_snapshot.json",
+      "package_managed": true,
+      "canonical_size": 638,
+      "sha256": "3ce1fa3781f097e771c60e4f80f304cf41dd738e5cc29f07590e6d28dab62280"
+    },
+    {
+      "path": "examples/shard_conflict_snapshot.json",
+      "package_managed": true,
+      "canonical_size": 638,
+      "sha256": "bf587781d565ff26ff860f4441f6858243770b264bee1d9b7b0c3fd5883b5ed8"
+    },
+    {
+      "path": "kalshi_public_buy/__init__.py",
+      "package_managed": true,
+      "canonical_size": 99,
+      "sha256": "51b0cd93f1a01bd940f1688a138f1abb820727768133b75e06b4dc92bae9b26e"
+    },
+    {
+      "path": "kalshi_public_buy/cli.py",
+      "package_managed": true,
+      "canonical_size": 1725,
+      "sha256": "bdf1930505b605cdb8ec57dd58a91e7f225e89646b295bfdec5b4df595bba0ac"
+    },
+    {
+      "path": "kalshi_public_buy/planner.py",
+      "package_managed": true,
+      "canonical_size": 6504,
+      "sha256": "f3124bbd35c16592e8d1f2348a50a3a71c191c17115c242f13c4a797b13c1f62"
+    },
+    {
+      "path": "run_buy_planner.py",
+      "package_managed": true,
+      "canonical_size": 96,
+      "sha256": "cba6a9d74e6c7639dea4f1eb465714e4e66b851a4d3259fb0a9368a2068b6a39"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "package_managed": true,
+      "canonical_size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/verify_release.py",
+      "package_managed": true,
+      "canonical_size": 6589,
+      "sha256": "178b1e800a5b75fbcb9484c5778764fb408bee93e3141e27d28e8659bd908cc1"
+    },
+    {
+      "path": "tests/__init__.py",
+      "package_managed": true,
+      "canonical_size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_package_contract.py",
+      "package_managed": true,
+      "canonical_size": 3371,
+      "sha256": "2efcb976f9dec51433d66e4fa2cafb49ca7923cb8a58acafe41d96bcc6b2d663"
+    },
+    {
+      "path": "tests/test_planner.py",
+      "package_managed": true,
+      "canonical_size": 2746,
+      "sha256": "fdb4498a650b478c342cafebfed74a25cd83ef2e6ba72e7cc6cd8776f01fa962"
+    },
+    {
+      "path": "tests/test_public_boundary.py",
+      "package_managed": true,
+      "canonical_size": 1888,
+      "sha256": "e38c63b6abb865f4ab39a7f1b5a5020ae236f398d3f2477239bbdb40ee4388a0"
+    },
+    {
+      "path": "tests/test_public_sanitization.py",
+      "package_managed": true,
+      "canonical_size": 4316,
+      "sha256": "f15a8b989ed56c5ca613a32cfc3aa46fcd1d31d8775ea5d12190f1fbf84bc841"
+    },
+    {
+      "path": "tests/test_release_identity.py",
+      "package_managed": true,
+      "canonical_size": 290,
+      "sha256": "0e93326e85025d1341b3f553ec7a184bf8d1f7d6883dafe4c777c346a935cb5e"
+    }
+  ]
+}

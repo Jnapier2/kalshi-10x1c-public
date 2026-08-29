@@ -1,0 +1,35 @@
+{
+  "schema_version": "gateway-public-package-v1",
+  "project": "Kalshi 10×1¢ Public Edition",
+  "display_version": "69.68-public.1",
+  "build_id": "KALBUY-PUBLIC-69.68.1-OFFLINE-TRUTH",
+  "package_name": "kalshi-10x1c-public",
+  "canonical_entrypoint": "run_buy_planner.py",
+  "windows_convenience_shim": "Kalshi10x1cPublic.bat",
+  "execution_mode": "offline-read-only",
+  "network_access": false,
+  "credential_support": false,
+  "live_write_capability": false,
+  "private_source_lineage": "Kalshi 15-Minute 1¢ Buy Bot v69.68",
+  "public_description": "Offline exact-10×1¢ planner with exchange-state truth, shard conflict detection, and duplicate-intent protection.",
+  "runtime_dependencies": [],
+  "parameter_baseline": "Gateway Operating Defaults v2.17.13",
+  "rights": {
+    "license": "MIT",
+    "copyright": "Copyright © 2026 Gateway Information Group LLC. All rights reserved."
+  },
+  "package_id": "KALSHI_10X1C_PUBLIC",
+  "execution_namespace": "KALSHI10X1C_PUBLIC",
+  "backend_target": "run_buy_planner.py",
+  "approved_entrypoint_aliases": [
+    "Kalshi10x1cPublic.bat"
+  ],
+  "project_relative_output_roots": {},
+  "output_policy": {
+    "default_output": "stdout",
+    "implicit_filesystem_writes": false,
+    "external_output_supported": false
+  },
+  "manifest": "MANIFEST.json",
+  "sbom": "SBOM.cdx.json"
+}

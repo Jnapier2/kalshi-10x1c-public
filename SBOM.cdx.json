@@ -1,0 +1,28 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:47cd4ed1-4c51-5deb-9429-1c327ec93061",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "Kalshi 10×1¢ Public Edition",
+      "version": "69.68-public.1"
+    },
+    "properties": [
+      {
+        "name": "gateway.runtime.dependencies",
+        "value": "none; Python standard library only"
+      },
+      {
+        "name": "gateway.network.access",
+        "value": "false"
+      },
+      {
+        "name": "gateway.live.write.capability",
+        "value": "false"
+      }
+    ]
+  },
+  "components": []
+}
