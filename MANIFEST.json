@@ -7,7 +7,7 @@
   "execution_namespace": "KALSHI10X1C_PUBLIC",
   "canonical_entrypoint": "run_buy_planner.py",
   "hash_mode": "sha256 of UTF-8 text normalized to LF; raw bytes for other files",
-  "file_count": 30,
+  "file_count": 29,
   "files": [
     {
       "path": ".gitattributes",
@@ -20,12 +20,6 @@
       "package_managed": true,
       "canonical_size": 1592,
       "sha256": "2e9f72f527787e30844a4494b61757eafb90182d650620af2f4e99cb8d6c16fd"
-    },
-    {
-      "path": ".github/workflows/codeql.yml",
-      "package_managed": true,
-      "canonical_size": 583,
-      "sha256": "48d5a16e255da0c8d37ed4178a0858557da52455c8e699609c289556e3a0b49c"
     },
     {
       "path": ".gitignore",
