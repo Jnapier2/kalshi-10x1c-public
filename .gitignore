@@ -1,36 +1,15 @@
-# Secrets
-.env
-.env.*
-!.env.example
-*.key
-*.pem
-*.p12
-*.pfx
-
-# Runtime state and evidence
-.public_verify_attestation.json
-VERIFICATION_REPORT.md
-runtime/*
-!runtime/.gitkeep
-logs/*
-!logs/.gitkeep
-
-# Python/tool caches
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.ruff_cache/
-.mypy_cache/
 .venv/
-venv/
-
-# OS/editor files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Release artifacts
-*.zip
-*.zip.sha256
-CLEAN_EXTRACTION_VERIFICATION.txt
+.pytest_cache/
+.coverage
+htmlcov/
+outputs/
+logs/
+state/
+temp/
+*.pem
+*.key
+.env
+.env.*
+secrets.local.*

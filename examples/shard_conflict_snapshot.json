@@ -1,0 +1,24 @@
+{
+  "schema_version": "kalshi-buy-public-snapshot-v1",
+  "round_id": "SYNTHETIC-ROUND-001",
+  "ticker": "SYNTHETIC-MARKET-002",
+  "side": "yes",
+  "market_status": "open",
+  "platform_status": "operational",
+  "market_data_age_seconds": 2,
+  "price_grid_allows_one_cent": true,
+  "fee_evidence_complete": true,
+  "balance_evidence_complete": true,
+  "scoped_balance_cents": 15,
+  "modeled_fee_cents": 1,
+  "exchange_index": 2,
+  "observed_exchange_indexes": [
+    1,
+    2
+  ],
+  "existing_open_order": false,
+  "position_contracts": 0,
+  "book_would_cross": false,
+  "prior_intent_ids": [],
+  "notes": "Synthetic public example only."
+}
