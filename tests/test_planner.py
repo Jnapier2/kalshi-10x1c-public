@@ -64,6 +64,13 @@ class BuyPlannerTests(unittest.TestCase):
         two = plan_buy(copy.deepcopy(base_snapshot()))['intent_id']
         self.assertEqual(one, two)
 
+    def test_extreme_financial_evidence_fails_closed(self) -> None:
+        snapshot = base_snapshot()
+        snapshot['scoped_balance_cents'] = '1E999999'
+        result = plan_buy(snapshot)
+        self.assertEqual(result['decision'], 'INVALID')
+        self.assertIn('scoped_balance_cents_out_of_range', result['reason_codes'])
+
     def test_unknown_critical_input_fails_closed(self) -> None:
         snapshot = base_snapshot()
         snapshot['live'] = True

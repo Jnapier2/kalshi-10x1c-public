@@ -8,6 +8,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {'.bat', '.json', '.md', '.py', '.txt', '.yml', '.yaml'}
 TEXT_NAMES = {'LICENSE', 'TRADING_DISABLED'}
+IGNORED_DIRECTORY_NAMES = {'.git', '__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache'}
+IGNORED_FILE_SUFFIXES = {'.pyc', '.pyo'}
 
 
 def canonical_bytes(path: Path) -> bytes:
@@ -16,6 +18,24 @@ def canonical_bytes(path: Path) -> bytes:
         text = data.decode('utf-8', errors='strict')
         return text.replace('\r\n', '\n').replace('\r', '\n').encode('utf-8')
     return data
+
+
+def _ignored_inventory_path(relative: PurePosixPath) -> bool:
+    return bool(set(relative.parts) & IGNORED_DIRECTORY_NAMES) or relative.suffix.lower() in IGNORED_FILE_SUFFIXES
+
+
+def _actual_inventory(root: Path) -> tuple[set[str], list[str]]:
+    files: set[str] = set()
+    errors: list[str] = []
+    for path in root.rglob('*'):
+        relative = PurePosixPath(path.relative_to(root).as_posix())
+        if _ignored_inventory_path(relative):
+            continue
+        if path.is_symlink():
+            errors.append(f'unexpected_symlink:{relative.as_posix()}')
+        elif path.is_file():
+            files.add(relative.as_posix())
+    return files, errors
 
 
 def verify_project(root: Path = ROOT) -> tuple[bool, list[str]]:
@@ -32,12 +52,21 @@ def verify_project(root: Path = ROOT) -> tuple[bool, list[str]]:
         return False, errors
 
     try:
-        manifest: dict[str, Any] = json.loads(manifest_path.read_text(encoding='utf-8'))
-        metadata: dict[str, Any] = json.loads(metadata_path.read_text(encoding='utf-8'))
+        manifest_raw: Any = json.loads(manifest_path.read_text(encoding='utf-8'))
+        metadata_raw: Any = json.loads(metadata_path.read_text(encoding='utf-8'))
+        version = version_path.read_text(encoding='utf-8').strip()
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         return False, [f'metadata_parse_error:{type(exc).__name__}']
 
-    version = version_path.read_text(encoding='utf-8').strip()
+    if not isinstance(manifest_raw, dict):
+        errors.append('manifest_not_object')
+    if not isinstance(metadata_raw, dict):
+        errors.append('metadata_not_object')
+    if errors:
+        return False, errors
+
+    manifest: dict[str, Any] = manifest_raw
+    metadata: dict[str, Any] = metadata_raw
     expected_pairs = (
         ('version', manifest.get('version'), version),
         ('metadata_version', metadata.get('display_version'), version),
@@ -144,6 +173,14 @@ def verify_project(root: Path = ROOT) -> tuple[bool, list[str]]:
     }
     missing_managed = sorted(required_managed - seen)
     errors.extend(f'missing_managed_contract:{item}' for item in missing_managed)
+
+    actual, inventory_errors = _actual_inventory(root)
+    errors.extend(inventory_errors)
+    expected_actual = seen | {'MANIFEST.json'}
+    for rel in sorted(actual - expected_actual):
+        errors.append(f'unexpected_file:{rel}')
+    for rel in sorted(expected_actual - actual):
+        errors.append(f'inventory_missing:{rel}')
 
     return not errors, errors
 

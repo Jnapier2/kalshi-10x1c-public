@@ -10,6 +10,7 @@ SCHEMA_VERSION = 'kalshi-buy-public-snapshot-v1'
 CONTRACTS = 10
 ECONOMIC_PRICE_CENTS = Decimal('1')
 MAX_MARKET_DATA_AGE_SECONDS = Decimal('10')
+MAX_FINANCIAL_EVIDENCE_CENTS = Decimal('1000000000000')
 TICKER_PATTERN = re.compile(r'^[A-Z0-9][A-Z0-9_.:-]{2,63}$')
 ALLOWED_FIELDS = {
     'schema_version', 'round_id', 'ticker', 'side', 'market_status',
@@ -93,6 +94,10 @@ def plan_buy(snapshot: Mapping[str, Any]) -> dict[str, Any]:
     balance = _decimal(snapshot.get('scoped_balance_cents'), 'scoped_balance_cents', errors)
     if modeled_fee < 0 or balance < 0:
         errors.append('negative_financial_value')
+    if modeled_fee > MAX_FINANCIAL_EVIDENCE_CENTS:
+        errors.append('modeled_fee_cents_out_of_range')
+    if balance > MAX_FINANCIAL_EVIDENCE_CENTS:
+        errors.append('scoped_balance_cents_out_of_range')
     required = Decimal(CONTRACTS) * ECONOMIC_PRICE_CENTS + modeled_fee
     if balance < required:
         holds.append('scoped_balance_insufficient')
