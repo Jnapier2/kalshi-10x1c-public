@@ -54,8 +54,8 @@
     {
       "path": "PACKAGE_METADATA.json",
       "package_managed": true,
-      "canonical_size": 1331,
-      "sha256": "a4eb5ac8d26fb7d71baceb5ac098d325b9b092852305bd466f8aa2faf647f746"
+      "canonical_size": 1268,
+      "sha256": "96c8ba49885c661b18b1d16ae9406ac24927b1b21684d0974631fd50e748d26d"
     },
     {
       "path": "PUBLIC_STERILIZATION_REPORT.md",

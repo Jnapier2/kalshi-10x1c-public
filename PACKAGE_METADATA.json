@@ -13,7 +13,6 @@
   "private_source_lineage": "Kalshi 15-Minute 1¢ Buy Bot v69.68",
   "public_description": "Offline exact-10×1¢ planner with exchange-state truth, shard conflict detection, and duplicate-intent protection.",
   "runtime_dependencies": [],
-  "parameter_baseline": "Gateway Operating Defaults v2.17.13",
   "rights": {
     "license": "MIT",
     "copyright": "Copyright © 2026 Gateway Information Group LLC. All rights reserved."
